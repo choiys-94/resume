@@ -22,6 +22,61 @@
     <!-- Style CSS -->
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <style>
+        *:hover {
+            cursor: default;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        #back-to-top {
+            display: inline-block;
+            background-color: #FF9800;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 4px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            transition: background-color .3s, 
+              opacity .5s, visibility .5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        #back-to-top::after {
+            content: "\f077";
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 2em;
+            line-height: 50px;
+            color: #fff;
+        }
+
+        #back-to-top:hover {
+            cursor: pointer;
+            background-color: #333;
+        }
+
+        #back-to-top:active {
+            background-color: #555;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,6 +85,7 @@
     <![endif]-->
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar">
+<a id="back-to-top"></a>
 <div id="main-wrapper">
 <!-- Page Preloader -->
 <div id="preloader">
@@ -53,8 +109,10 @@
                     Eat, Code, Sleep<br/>
                     Eat, Hack, Sleep
                 </p>
-
-                <p><img src="img/Signature.png" alt="" class="img-responsive"/></p>
+                <p>
+                    <div style="display: inline-block; width: 60px;">Portfolio</div> : <a href="http://portfolio.choiys.kr">http://portfolio.choiys.kr</a><br/>
+                    <div style="display: inline-block; width: 60px;">Blog</div> : <a href="http://blog.choiys.kr">http://blog.choiys.kr</a>
+                </p>
             </div>
 
 
@@ -87,17 +145,22 @@
         <div class="row">
             <div class="col-md-12">
                 <address>
-                    <strong>Email</strong><br>
-                    <a href="mailto:hcy3bkj@gmail.com">hcy3bkj@gmail.com</a>
+                    <strong>Portfolio</strong><br/>
+                    <a href="http://portfolio.choiys.kr">http://portfolio.choiys.kr</a>
                 </address>
                 <address>
                     <strong>Blog</strong><br>
                     <a href="http://blog.choiys.kr">http://blog.choiys.kr</a>
                 </address>
                 <address>
+                    <strong>Email</strong><br>
+                    <a href="mailto:hcy3bkj@gmail.com">hcy3bkj@gmail.com</a>
+                </address>
+                <address>
                     <strong>Phone Number</strong><br>
                     +82 10 4760 2026
                 </address>
+
             </div>
         </div>
     </div>
@@ -174,9 +237,9 @@
                     <h4>Chosun University</h4>
 
                     <p>Republic Of Korea, Gwangju</p>
-<p>
-- 차석 졸업 ( 4.41 / 4.5 )</br>
-</p>
+                    <p>
+                    - 차석 졸업 ( 4.41 / 4.5 )</br>
+                    </p>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -185,9 +248,9 @@
                     <h4>Best of the Best 5th</h4>
 
                     <p>Republic Of Korea, Seoul</p>
-<p>
-- 정보보안 집체 교육 이수 및 프로젝트 수행</br>
-</p>
+                    <p>
+                    - 정보보안 집체 교육 이수 및 프로젝트 수행</br>
+                    </p>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -196,9 +259,9 @@
                     <h4>Qualcomm Institute</h4>
 
                     <p>California, San Diego</p>
-<p>
-- IoT 개발 및 소프트웨어 개발 방법론 교육 이수, 관련 프로젝트 수행
-</p>
+                    <p>
+                    - IoT 개발 및 소프트웨어 개발 방법론 교육 이수, 관련 프로젝트 수행
+                    </p>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -207,10 +270,10 @@
                     <h4>Samsung Software Academy For Youth 2nd</h4>
 
                     <p>Republic Of Korea, Gwangju</p>
-<p>
-- 알고리즘 교육 이수</br>
-- 웹 프론트엔드, 백엔드 교육 이수 및 관련 프로젝트 수행
-</p>
+                    <p>
+                    - 알고리즘 교육 이수</br>
+                    - 웹 프론트엔드, 백엔드 교육 이수 및 관련 프로젝트 수행
+                    </p>
                 </div>
                 <!-- .experience-item -->
             </div>
@@ -238,138 +301,66 @@
             <div class="col-md-12">
                 <div class="progress-wrapper">
 
-		    <h2>Security</h2>
-
-                    <div class="progress-item">
-                        <span class="progress-title">Web Pentest</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 80%"><span class="progress-percent"> 80%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-
-
-                    <div class="progress-item">
-                        <span class="progress-title">Reverse Engineering</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 40%"><span class="progress-percent"> 40%</span>
-                            </div>
-                        </div>
-                        <!-- /.progress -->
-                    </div>
-                    <!-- /.skill-progress -->
-
-
-                    <div class="progress-item">
-                        <span class="progress-title">Mobile Pentest</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 60%;"><span class="progress-percent"> 60%</span>
-                            </div>
-                        </div>
-                        <!-- /.progress -->
-                    </div>
-                    <!-- /.skill-progress -->
-
+		    <code>Security</code> : <span><b>Web Pentest</b>, Mobile Pentest, Reverse Engineering</span>
 		    <br />
-		    <h2>Language</h2>
 
-                    <div class="progress-item">
-                        <span class="progress-title">PHP</span>
+		    <code>Languages</code> : <span><b>Python</b>, <b>Java</b>, C/C++, PHP, JavaScript, Assembly</span>
+		    <br />
 
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 50%;"><span class="progress-percent"> 50%</span>
-                            </div>
-                        </div>
-                        <!-- /.progress -->
-                    </div>
-                    <!-- /.skill-progress -->
-                    <div class="progress-item">
-                        <span class="progress-title">Python</span>
+            <code>Databases</code> : <span><b>MySQL</b>, Oracle</span>
+            <br />
 
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 70%;"><span class="progress-percent"> 70%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-                    <div class="progress-item">
-                        <span class="progress-title">Java</span>
+            <code>Frameworks</code> : <span><b>Spring (+boot)</b>, Flask, MyBatis, SQLAlchemy, Vue.js, etc.</span>
+            <br />
 
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 60%;"><span class="progress-percent"> 70%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-                    <div class="progress-item">
-                        <span class="progress-title">C/C++</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 40%;"><span class="progress-percent"> 40%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-                    <div class="progress-item">
-                        <span class="progress-title">Assembly</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 30%;"><span class="progress-percent"> 30%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-                    <div class="progress-item">
-                        <span class="progress-title">SQL (MySQL)</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 60%;"><span class="progress-percent"> 60%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-
-		    <br /><h2>Framework</h2>
-
-                    <div class="progress-item">
-                        <span class="progress-title">Spring (+Boot)</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                                 aria-valuemax="100" style="width: 70%;"><span class="progress-percent"> 70%</span>
-                            </div>
-                        </div>
-                        <!-- .progress -->
-                    </div>
-                    <!-- .skill-progress -->
-                </div>
-                <!-- /.progress-wrapper -->
-            </div>
+            <code>ETC</code> : <span>Git, Linux, etc.</span>
+            <br />
         </div>
         <!--.row -->
     </div>
     <!-- .container-fluid -->
 </section>
 <!-- .skills-wrapper -->
+
+<section class="section-wrapper section-project gray-bg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title"><h2>Qualification</h2></div>
+            </div>
+        </div>
+        <!--.row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-item">
+                    <small>2016.05.06</small>
+                    <h3>정보처리기사</h3>
+                    <h4>한국산업인력공단</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-item">
+                    <small>2018.09.11</small>
+                    <h3>OPIc ( IM2 )</h3>
+                    <h4>멀티캠퍼스</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-item">
+                    <small>2019.02.10</small>
+                    <h3>TOEIC ( 785 )</h3>
+                    <h4>YBM</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="section-wrapper section-project gray-bg">
     <div class="container-fluid">
@@ -387,6 +378,10 @@
                     <h4>Best of the Best 5th</h4>
 
                     <p>IoT 디바이스 관리자 권한 탈취, 카메라 및 기기 원격 제어</p>
+                    <pre>- 기여도 : 30%
+- 공격 벡터 선정 및 Exploit 작성
+
+- 산출물 : LG전자 보안 취약점 탐지 감사장, 해외 컨퍼런스 발표</pre>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -395,6 +390,12 @@
                     <h4>Chosun University</h4>
 
                     <p>배포된 IoC 룰을 이용하여 PC 침해 상황을 점검, 결과를 시각화하는 프로그램</p>
+                    <pre>- 기여도 : 40%
+- 웹 프론트엔드, 백엔드 구현 (Python - Flask)
+- 데이터베이스 설계 (SQLite)
+- 결과 시각화
+
+- 산출물 : <a href="http://kpat.kipris.or.kr/kpat/biblioa.do?method=biblioMain_biblio&next=biblioViewSub01&applno=1020180100048&getType=BASE" target="_blank">특허 등록 (10-2018-0100048)</a></pre>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -403,6 +404,11 @@
                     <h4>Qualcomm Institute</h4>
 
                     <p>센서, 안드로이드, 웹서버를 연동하여 대기질, 심박수 등을 측정하여 실시간으로 표현하고, 통계를 시각화하는 프로그램</p>
+                    <pre>- 기여도 : 30%
+- 웹 프론트엔드, 백엔드 구현 (PHP - Slim)
+- 데이터베이스 설계 (MySQL)
+- 센서 데이터 실시간 업데이트
+- 결과 시각화</pre>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -411,6 +417,11 @@
                     <h4>Chosun University</h4>
 
                     <p>웹페이지 내 첨부파일들을 샌드박스에서 동적분석 후 결과를 시각화하는 프로그램</p>
+                    <pre>- 기여도 : 80%
+- 웹 프론트엔드, 백엔드 구현 (Python - Flask)
+- 웹 크롤링
+- 샌드박스 설치 및 연동 (Cuckoo Sandbox)
+- 결과 시각화</pre>
                 </div>
                 <!-- .experience-item -->
                 <div class="content-item">
@@ -419,6 +430,12 @@
                     <h4>Samsung Software Academy For Youth</h4>
 
                     <p>사용자가 섭취한 식품의 영양 정보 통계 및 시각화, 웹 크롤링을 이용한 맛집 추천 서비스</p>
+                    <pre>- 기여도 : 70%
+- 웹 프론트엔드 (Vue.js), 백엔드 구현 (Java - Spring Boot)
+- 데이터베이스 설계 (MySQL - MyBatis)
+- 웹 크롤링
+
+- 산출물 : SSAFY 프로젝트 경진대회 최우수상</pre>
                 </div>
                 <!-- .experience-item -->
             </div>
@@ -629,12 +646,28 @@
 <!-- .columns-block -->
 </div>
 <!-- #main-wrapper -->
+<script>
+    $(function() {
+        $("#back-to-top").on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 600);
+        });
 
+        $(window).scroll(function() {
+            if($(document).scrollTop() > 100) {
+                $("#back-to-top").addClass("show");
+            }
+            else {
+                $("#back-to-top").removeClass("show");
+            }
+        });
+    });
+</script>
 <!-- jquery -->
-<script src="js/jquery-2.1.4.min.js"></script>
+<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
 
 <!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
 <script src="js/theia-sticky-sidebar.js"></script>
 <script src="js/scripts.js"></script>
 </body>
